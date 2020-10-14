@@ -1,8 +1,14 @@
-import {ADD_PRODUCT, GET_PRODUCT, DELETE_PRODUCT, UPDATE_PRODUCT, ADD_TO_CART,REMOVE_ITEM,SUB_QUANTITY,ADD_QUANTITY} from '../constants/product-const';
+import {ADD_PRODUCT, ADD_ORDER, GET_ORDER, GET_PRODUCT, DELETE_PRODUCT, UPDATE_PRODUCT, ADD_TO_CART,REMOVE_ITEM,SUB_QUANTITY,ADD_QUANTITY} from '../constants/product-const';
 
 export const getProduct = (data) =>{
   return({
     type: GET_PRODUCT,
+    payload: data
+  })
+}
+export const getOrders = (data) =>{
+  return({
+    type: GET_ORDER,
     payload: data
   })
 }
@@ -11,6 +17,12 @@ export const addNewProduct = (newProduct) =>{
   return({
     type: ADD_PRODUCT,
     payload: newProduct
+  })
+}
+export const addOrder = (newOrder) =>{
+  return({
+    type: ADD_ORDER,
+    payload: newOrder
   })
 }
 export const deleteProduct = (id) => {

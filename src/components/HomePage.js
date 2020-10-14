@@ -6,10 +6,11 @@ import { Button, Form, FormGroup, Label, Input, Container } from 'reactstrap';
 import Axios from 'axios';
 import {url} from '../helpers/url'
 import { connect } from 'react-redux';
-import {addNewProduct} from '../redux/actions'
+import {addNewProduct, getOrders} from '../redux/actions'
 import Product from './Product';
 
 function HomePage(props) {
+
     const users = useSelector(state => state.users);
     const user = useSelector(state => state.authentication.user);
     const dispatch = useDispatch();
@@ -49,6 +50,7 @@ function addProduct(e){
     }addData();
   }
 }
+
 
     return (
         <div className="col-lg-8 offset-lg-2">
@@ -112,6 +114,7 @@ function addProduct(e){
     </Form>
     <Product dis={"block"} />
 
+            {console.log(props)}
     </Container>
         </div>
 

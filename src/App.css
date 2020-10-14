@@ -243,3 +243,6 @@ ul.searchList li:hover {
   width: 100px;
   height: 100px;
 }
+.ErrorMessage{
+  color: black;
+}

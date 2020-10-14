@@ -7,10 +7,13 @@ import {
   REMOVE_ITEM,
   SUB_QUANTITY,
   ADD_QUANTITY,
+  ADD_ORDER,
+  GET_ORDER
 } from "../constants/product-const";
 
 const initialState = {
   products: [],
+  orders: [],
   addedItems: [],
   total: 0,
 };
@@ -22,6 +25,10 @@ function ProductReducer(state = initialState, action) {
       return { ...state, products: [...state.products, action.payload] };
     case GET_PRODUCT:
       return { ...state, products: action.payload };
+      case GET_ORDER:
+        return { ...state, orders: action.payload };
+    case ADD_ORDER:
+      return {...state, orders: [...state.orders, action.payload]}
     case DELETE_PRODUCT:
       return {
         ...state,

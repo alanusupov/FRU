@@ -69,6 +69,7 @@ function Product({ getProduct, ...props }) {
   }
   function addCart(id) {
     props.addToCart(id);
+   
   }
   const history = useHistory();
   console.log(props.products);
@@ -92,7 +93,7 @@ function Product({ getProduct, ...props }) {
   const [search, setSearch] = useState("");
   const [input, setInput] = useState("");
   const filteredProducts = props.products.filter((product) => {
-    return product.productN.toLowerCase().match(input);
+    return String(product.productN).toLowerCase().match(input);
   });
   const handleInputChange = (e) => {
     e.preventDefault(
@@ -126,7 +127,7 @@ function Product({ getProduct, ...props }) {
           ) : null;
         })}
       </ul>
-      <CardColumns className="mt-3">
+      <CardColumns style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}} className="mt-3">
         {props.products ? (
           _DATA.currentData().map((product) => (
             <Card
